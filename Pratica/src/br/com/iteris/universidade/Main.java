@@ -40,5 +40,8 @@ public class Main {
         contaDoBruno.getTitular().setNome("Bruno");
         System.out.println(contaDoBruno.getTitular().getNome());
         // Pega o dado per se
+
+        contaDoBruno.saca(1000);
+        System.out.println(contaDoBruno.getSaldo());
     }
 }

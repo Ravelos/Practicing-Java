@@ -30,6 +30,15 @@ public class Main {
         System.out.println(" A conta do Fernando Villalona tem " + contaDoFernando.getSaldo());
         System.out.println(" A primeira conta tem " + primeiraConta.getSaldo());
 
-        
+        Conta contaDoBruno = new Conta(2345,9879);
+        System.out.println(contaDoBruno.getSaldo());
+
+        contaDoBruno.setTitular(new Cliente());
+        System.out.println(contaDoBruno.getTitular());
+        // pega o espaço da memoria aonde é guardado esse dado
+
+        contaDoBruno.getTitular().setNome("Bruno");
+        System.out.println(contaDoBruno.getTitular().getNome());
+        // Pega o dado per se
     }
 }

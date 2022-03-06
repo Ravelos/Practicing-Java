@@ -15,5 +15,21 @@ public class Main {
         Conta segundaConta = new Conta(3452,98767);
         segundaConta.deposita(150);
         System.out.println("O saldo da segunda conta é " + segundaConta.getSaldo());
+
+
+
+        Cliente fernando = new Cliente();
+        fernando.setNome("Fernando Villalona");
+        fernando.setCpf("09876543");
+        fernando.setProfissao("Mestre de obras");
+
+        Conta contaDoFernando = new Conta(2345,9387);
+        contaDoFernando.deposita(3000);
+        contaDoFernando.transferir(200, primeiraConta);
+
+        System.out.println(" A conta do Fernando Villalona tem " + contaDoFernando.getSaldo());
+        System.out.println(" A primeira conta tem " + primeiraConta.getSaldo());
+
+        
     }
 }

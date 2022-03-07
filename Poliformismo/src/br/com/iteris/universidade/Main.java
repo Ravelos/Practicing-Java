@@ -26,5 +26,10 @@ public class Main {
         boolean passwordCheck = luiz.autenticaSenha(3421);
         System.out.println(passwordCheck);
 
+
+        System.out.println(luiz.getBonificacao());
+
+
+
     }
 }

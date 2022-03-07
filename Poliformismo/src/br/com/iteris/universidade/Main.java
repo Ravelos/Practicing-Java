@@ -29,6 +29,23 @@ public class Main {
 
         System.out.println(luiz.getBonificacao());
 
+        EditorVideo editorvideo = new EditorVideo();
+
+        editorvideo.setSalario(2000.00);
+
+        Designer designer = new Designer();
+        designer.setSalario(1500.00);
+
+
+        ControleBonificacao controleBonificacao  = new ControleBonificacao();
+        controleBonificacao.registra(editorvideo);
+        controleBonificacao.registra(designer);
+        controleBonificacao.registra(luiz);
+
+
+        System.out.println(controleBonificacao.getSoma());
+
+
 
 
     }

@@ -4,6 +4,6 @@ public class EditorVideo extends Funcionario{
 
     @Override
     public double getBonificacion() {
-        return this.getSalario() + 200;
+        return 200;
     }
 }

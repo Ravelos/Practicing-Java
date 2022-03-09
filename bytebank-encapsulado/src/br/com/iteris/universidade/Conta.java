@@ -1,78 +1,75 @@
 package br.com.iteris.universidade;
 
-public class Conta {
-    private double saldo;
+public abstract class Conta {
+    //saldo protectec so that it could be used in children classes
+    protected double saldo;
     private int agencia;
     private int numero;
     private Cliente titular;
     private static int total = 0;
 
-
-    public Conta(int agencia, int numero) {
+    public Conta(int agencia, int numero){
+        // Adding accounts in order to see the total
+        Conta.total++;
         this.agencia = agencia;
         this.numero = numero;
-        this.saldo = saldo;
-        this.titular = titular;
-        Conta.total++;
-        System.out.println("Estou criando uma conta " + this.numero);
-        System.out.println("O total de contas é " + Conta.total);
+
     }
 
-    public void deposita(double valor) {
-        this.saldo += valor;
-    }
+    //abstract class in order to use it in children
+    public abstract void deposita(double valor);
 
-         public boolean saca(double valor) {
-            if (this.saldo >= valor) {
-                this.saldo -= valor;
-                return true;
-            } else {
-                return false;
-            }
+    public boolean saca(double valor) {
+        if(this.saldo >= valor) {
+            this.saldo -= valor;
+            return true;
+        } else {
+            return false;
         }
+    }
 
     public boolean transfere(double valor, Conta destino) {
-        if (this.saldo >= valor) {
-            this.saldo -= valor;
+        if(this.saca(valor)) {
             destino.deposita(valor);
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
 
-    public double getSaldo() {
-        return saldo;
+    public double getSaldo(){
+        return this.saldo;
+    }
+
+    public int getNumero(){
+        return this.numero;
     }
 
     public void setNumero(int numero){
-        if(this.numero<=0){
-            System.out.println("Não pode ser um número menor ou igual a cero");
+        if(numero <= 0) {
+            System.out.println("Nao pode valor menor igual a 0");
             return;
         }
         this.numero = numero;
     }
 
-    public int getNumero() {
-        return numero;
+    public int getAgencia(){
+        return this.agencia;
     }
 
-    public void setAgencia(int agencia) {
-        if (agencia <= 0){
-            System.out.println("Não pode ser um número igual ou menor que cero");
+    public void setAgencia(int agencia){
+        if(agencia <= 0) {
+            System.out.println("Nao pode valor menor igual a 0");
             return;
         }
         this.agencia = agencia;
     }
 
-    public int getAgencia() {
-        return agencia;
-    }
-
-    public void setTitular(Cliente titular) {
+    public void setTitular(Cliente titular){
         this.titular = titular;
     }
 
-    public Cliente getTitular() {
+    public Cliente getTitular(){
         return this.titular;
     }
 

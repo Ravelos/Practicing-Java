@@ -16,26 +16,24 @@ public abstract class Conta {
 
     }
 
+    public void saca(double valor) throws SaldoInsuficienteExcecao{
+        if(this.saldo < valor){
+            throw new SaldoInsuficienteExcecao("Saldo: " + saldo + " Valor: " + valor);
+        }
+        this.saldo -= valor;
+    }
+
     //abstract class in order to use it in children
     public abstract void deposita(double valor);
 
-    public boolean saca(double valor) {
-        if(this.saldo >= valor) {
-            this.saldo -= valor;
-            return true;
-        } else {
-            return false;
-        }
+
+
+    public void transfere(double valor, Conta destino) throws SaldoInsuficienteExcecao{
+            this.saca(valor);
+            destino.deposita(valor);
     }
 
-    public boolean transfere(double valor, Conta destino) {
-        if(this.saca(valor)) {
-            destino.deposita(valor);
-            return true;
-        } else {
-            return false;
-        }
-    }
+
 
     public double getSaldo(){
         return this.saldo;

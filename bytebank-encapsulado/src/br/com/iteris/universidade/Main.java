@@ -29,6 +29,17 @@ public class Main {
 
         System.out.println("O imposto total é " + calc.getTotalImposto());
 
+        Conta conta = new ContaCorrente(231,3212);
+        conta.deposita(200.00);
+
+        try{
+            conta.saca(234);
+        }catch (SaldoInsuficienteExcecao ex){
+            System.out.println("Exception: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+        System.out.println(conta.getSaldo());
+
 
 
 

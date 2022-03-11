@@ -1,3 +1,4 @@
+import javax.swing.event.MouseInputAdapter;
 
 public class Fluxo {
 
@@ -5,7 +6,7 @@ public class Fluxo {
         System.out.println("Ini do main");
         try{
             metodo1();
-        }catch (ArithmeticException| NullPointerException ex){
+        }catch (ArithmeticException| NullPointerException | MinhaExcecao ex){
             String msg = ex.getMessage();
             System.out.println("Exception " + msg);
             ex.getStackTrace();
@@ -14,7 +15,7 @@ public class Fluxo {
         System.out.println("Fim do main");
     }
 
-    private static void metodo1() {
+    private static void metodo1() throws MinhaExcecao{
         System.out.println("Ini do metodo1");
 
         metodo2();
@@ -23,8 +24,8 @@ public class Fluxo {
         System.out.println("Fim do metodo1");
     }
 
-    private static void metodo2() {
+    private static void metodo2() throws MinhaExcecao {
         System.out.println("Ini do metodo2");
-        throw new ArithmeticException("Deu erro");
+        throw new MinhaExcecao("Deu muito errado");
     }
 }

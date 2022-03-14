@@ -18,7 +18,11 @@ public enum Desempenho {
 
     OTIMO{
         public BigDecimal percentualReajuste(){
-            return new BigDecimal("0.20");
+            return new BigDecimal("0.2");
         }
-    }
+    };
+
+    public abstract BigDecimal percentualReajuste();
+
+
 }

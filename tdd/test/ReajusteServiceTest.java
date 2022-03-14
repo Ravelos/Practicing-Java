@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 
 public class ReajusteServiceTest {
 
+
     @Test
     public void reajusteDeveSerDeTresPorcentoQuandoDesempenhoForADesejar() {
         ReajusteService service = new ReajusteService();

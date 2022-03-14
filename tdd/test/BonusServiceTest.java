@@ -5,15 +5,22 @@ import service.BonusService;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class BonusServiceTest {
 
     @Test
     public void bonusDeveriaSerZeroParaFuncionarioComSalarioMuitoAlto(){
         BonusService service = new BonusService();
-        BigDecimal bonus = service.calcularBonus(new Funcionario("Rafael",LocalDate.now(),new BigDecimal("25000")));
-                assertEquals(new BigDecimal("0.00"),bonus);
+       // assertThrows(IllegalArgumentException.class,() -> service.calcularBonus(new Funcionario("Rafael",LocalDate.now(),new BigDecimal("25000"))));
+        try{
+            service.calcularBonus(new Funcionario("Rafael",LocalDate.now(),new BigDecimal("25000")));
+            fail("Exception failed");
+        }catch (Exception e){
+            assertEquals("Funcionario com salario > 10000.00 não pode receber bonus",e.getMessage());
+
+        }
+
     }
 
     @Test

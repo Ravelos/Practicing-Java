@@ -41,6 +41,24 @@ public class Main {
         System.out.println(conta.getSaldo());
 
 
+        GuardadorDeContas guardador = new GuardadorDeContas();
+
+        Conta contaCorrente1 = new ContaCorrente(22,11);
+        guardador.adicionar(contaCorrente1);
+
+        Conta contaCorrente2 = new ContaCorrente(44,33);
+        guardador.adicionar(contaCorrente2);
+
+        int tamanho = guardador.getQuantidadeDeElementos();
+
+        Conta ref = guardador.getReferencia(0);
+
+
+        System.out.println(tamanho);
+        System.out.println(ref.getNumero());
+
+        System.out.println(ref.getNumero());
+
 
 
 

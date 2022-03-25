@@ -1,11 +1,12 @@
 package br.com.iteris.universidade;
 
 import java.io.*;
+import java.nio.Buffer;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        InputStream fis = new FileInputStream("lorem.txt");
+       /* InputStream fis = new FileInputStream("lorem.txt");
         Reader isr = new InputStreamReader(fis);
         BufferedReader br = new BufferedReader(isr);
 
@@ -24,11 +25,31 @@ public class Main {
 
         br.close();
         bw.close();
-        /*
+
         A leitura não necessariamente precisa ser de um arquivo.
          Acima, se você utilizar o System.in,
          você irá gravar no arquivo o que o usuário digitar.
          Mas para conseguir parar o console, verifique também se a linha não estará vazia
          */
+
+        // second part
+
+        InputStream fis = System.in;
+        Reader isr = new InputStreamReader(fis);
+        BufferedReader br =new BufferedReader(isr);
+
+        OutputStream fos = System.out;
+        Writer osw = new OutputStreamWriter(fos);
+        BufferedWriter bw = new BufferedWriter(osw);
+
+        String line =br.readLine();
+        while(line != null && !line.isEmpty()){
+            bw.write(line);
+            bw.newLine();
+            bw.flush();
+            line = br.readLine();
+        }
+        br.close();
+        bw.close();
     }
 }

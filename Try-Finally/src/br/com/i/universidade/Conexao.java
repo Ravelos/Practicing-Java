@@ -1,4 +1,4 @@
-package br.com.universidade;
+package br.com.i.universidade;
 
 public class Conexao implements AutoCloseable{
 

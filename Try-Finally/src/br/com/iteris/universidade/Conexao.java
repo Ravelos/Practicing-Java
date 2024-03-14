@@ -1,4 +1,4 @@
-package br.com.iteris.universidade;
+package br.com.universidade;
 
 public class Conexao implements AutoCloseable{
 

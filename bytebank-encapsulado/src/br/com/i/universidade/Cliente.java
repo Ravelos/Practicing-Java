@@ -1,4 +1,4 @@
-package br.com.iteris.universidade;
+package br.com.i.universidade;
 
 public class Cliente implements Atenticavel{
     private String nome;

@@ -1,4 +1,4 @@
-package br.com.iteris.universidade;
+package br.com.i.universidade;
 
 public class ContaCorrente extends Conta implements Tributavel{
 

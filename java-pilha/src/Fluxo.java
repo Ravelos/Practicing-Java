@@ -1,4 +1,4 @@
-import br.com.iteris.universidade.Conta;
+import br.com.i.universidade.Conta;
 
 public class Fluxo {
 

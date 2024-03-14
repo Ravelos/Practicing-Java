@@ -1,4 +1,4 @@
-package br.com.iteris.universidade;
+package br.com.i.universidade;
 
 public abstract class Conta {
     //saldo protectec so that it could be used in children classes
